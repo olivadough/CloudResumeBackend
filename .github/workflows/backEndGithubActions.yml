@@ -24,7 +24,6 @@ jobs:
       uses: actions/setup-python@v1
         with:
           python-version: 3.8
-
     - name: Zip it all up and upload to S3
       env:
         release_bucket: codebucketforbackendstackcloudresume
