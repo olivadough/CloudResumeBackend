@@ -18,7 +18,7 @@ jobs:
         sudo ./sam-installation/install
         sam --version
     - name: Deployment of back-end
-      run: sam deploy -t backend.yaml --no-fail-on-empty-changeset --stack-name backEndStack --region us-east-1 --capabilities CAPABILITY_IAM 
+      run: sam deploy -t backendStack.yaml --no-fail-on-empty-changeset --stack-name backEndStack --region us-east-1 --capabilities CAPABILITY_IAM 
 
 
         
