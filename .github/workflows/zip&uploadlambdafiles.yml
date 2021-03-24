@@ -28,13 +28,9 @@ jobs:
         env:
           release_bucket: codebucketforbackendstackcloudresume
           release_bucket_uri: s3://codebucketforbackendstackcloudresume/
-          release_id: ${{ format('SomeId-{0}-dev.zip', github.head_ref )}}
-          release_layer: ${{ format('SomeId-{0}-dev', github.head_ref )}}
+          release_id: codebucketforbackendstackcloudresume
         run: |
-          mkdir python
-          # zip it up
           zip --quiet -r $release_id python
-
+          
           # copy the file to S3 and install it in lambda layers
           aws s3 cp $release_id $release_bucket_uri
-          aws lambda publish-layer-version --layer-name $release_layer  --content S3Bucket=$release_bucket,S3Key=$release_id --compatible-runtimes python3.8 
