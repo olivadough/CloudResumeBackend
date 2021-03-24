@@ -17,8 +17,8 @@ jobs:
         unzip aws-sam-cli-linux-x86_64.zip -d sam-installation
         sudo ./sam-installation/install
         sam --version
-    - name: Deployment of back-end
-      run: sam deploy -t backendStack.yaml --no-fail-on-empty-changeset --stack-name backEndStack --region us-east-1 --capabilities CAPABILITY_IAM 
+    - name: Deploy bucket
+      run: sam deploy -t deploys3bucket.yaml --no-fail-on-empty-changeset --stack-name lamdbaContainer --region us-east-1 --capabilities CAPABILITY_IAM 
     
     - name: Setup Python 3.8
       uses: actions/setup-python@v1
@@ -26,9 +26,11 @@ jobs:
         python-version: 3.8
     - name: Zip it all up and upload to S3
       env:
-        release_bucket: codebucketforbackendstackcloudresume
-        release_bucket_uri: s3://codebucketforbackendstackcloudresume/
-        release_id: codebucketforbackendstackcloudresume
+        release_bucket: oliver_cloud_resume_backend
+        release_bucket_uri: s3://oliver_cloud_resume_backend/
       run: |
-          zip --quiet -r $release_id python
+          zip --quiet -r $release_bucket python
+          
+    - name: Deployment of back-end
+      run: sam deploy -t backendStack.yaml --no-fail-on-empty-changeset --stack-name backEndStack --region us-east-1 --capabilities CAPABILITY_IAM
         
