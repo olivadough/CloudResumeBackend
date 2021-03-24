@@ -21,7 +21,7 @@ jobs:
     - name: Deploy Cloudformation Bucket
       uses: aws-actions/aws-cloudformation-github-deploy@v1        
       with:
-        name: Zip Bucket
+        name: zip ucket
         template: deploys3bucket.yaml
         no-fail-on-empty-changeset: "1"
 
