@@ -5,7 +5,6 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       StageName: prod
-
   Lambda:
     Type: AWS::Serverless::Function
     Properties:
@@ -22,3 +21,7 @@ Resources:
       InlineCode: |
         def handler(event, context):
             return {'body': 'Hello World!', 'statusCode': 200}
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: codeBucket
