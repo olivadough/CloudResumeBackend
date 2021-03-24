@@ -26,7 +26,7 @@ jobs:
 
       - name: Zip it all up and upload to S3
         env:
-          release_bucket: arn:aws:s3:::codebucketforbackendstackcloudresume
+          release_bucket: codebucketforbackendstackcloudresume
           release_bucket_uri: s3://codebucketforbackendstackcloudresume/
           release_id: ${{ format('SomeId-{0}-dev.zip', github.head_ref )}}
           release_layer: ${{ format('SomeId-{0}-dev', github.head_ref )}}
