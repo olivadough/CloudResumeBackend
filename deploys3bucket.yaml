@@ -2,6 +2,6 @@ Resources:
   CodeBucket:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: oliver-cloud_resume-backend
+      BucketName: oliver-cloud-resume-backend
       PublicAccessBlockConfiguration:
         BlockPublicPolicy: FALSE
