@@ -31,6 +31,3 @@ jobs:
           release_id: codebucketforbackendstackcloudresume
         run: |
           zip --quiet -r $release_id python
-          
-          # copy the file to S3 and install it in lambda layers
-          aws s3 cp $release_id $release_bucket_uri
