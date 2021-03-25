@@ -1,2 +1,2 @@
 def handler_name(event, context): 
-    return some_value
+      print("Hello from a function")
