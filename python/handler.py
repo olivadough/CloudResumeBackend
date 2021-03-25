@@ -1,2 +1,2 @@
-def handler_name(event, context): 
-      print("Hello from a function")
+def handler(event, context):
+            return {'body': 'Hello World!', 'statusCode': 200}

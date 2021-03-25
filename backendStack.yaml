@@ -18,4 +18,4 @@ Resources:
             RestApiId:
               Ref: ApiGatewayApi
       Runtime: python3.8
-      Handler: handler.handler_name
+      Handler: handler.handler
