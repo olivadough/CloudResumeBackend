@@ -21,9 +21,3 @@ Resources:
       InlineCode: |
         def handler(event, context):
             return {'body': 'Hello World!', 'statusCode': 200}
-  CodeBucket:
-    Type: 'AWS::S3::Bucket'
-    Properties:
-      BucketName: codebucketforbackendstackcloudresume
-      PublicAccessBlockConfiguration:
-        BlockPublicPolicy: FALSE
