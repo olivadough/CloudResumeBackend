@@ -36,7 +36,7 @@ jobs:
     - name: Zip it all up and upload to S3
       env:
         name_zipfile: $NOW + python.zip 
-        release_bucket_uri: s3://oliver-cloud-resume-backend/python.zip
+        release_bucket_uri: s3://oliver-cloud-resume-backend/ + name_zipfile
       run: |
           zip -r -j $name_zipfile python/*
           aws s3 cp $name_zipfile $release_bucket_uri 
