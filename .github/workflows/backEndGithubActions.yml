@@ -33,6 +33,7 @@ jobs:
       env:
         release_bucket: oliver-cloud-resume-backend
         release_bucket_uri: s3://oliver-cloud-resume-backend/
+        release_id: oliver-cloud-resume-backend
       run: |
           zip --quiet -r $release_bucket python
           aws s3 cp $release_bucket $release_bucket_uri
