@@ -33,7 +33,7 @@ jobs:
       env:
         release_bucket_uri: s3://oliver-cloud-resume-backend/python.zip
       run: |
-          zip -r -j python.zip python
+          zip -r -j python.zip python/*
           aws s3 cp python.zip $release_bucket_uri 
     - name: Deployment of back-end
       run: sam deploy -t backendStack.yaml --no-fail-on-empty-changeset --stack-name backEndStack --region us-east-1 --capabilities CAPABILITY_IAM
