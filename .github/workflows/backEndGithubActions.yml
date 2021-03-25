@@ -37,6 +37,7 @@ jobs:
       env:
         release_bucket_uri: s3://oliver-cloud-resume-backend/
       run: |
+          mkdir $current_date
           zip -r -j $current_date python/*
           aws s3 cp $current_date $s3://oliver-cloud-resume-backend/current_date
     - name: Deployment of back-end
