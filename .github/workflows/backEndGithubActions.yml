@@ -31,14 +31,13 @@ jobs:
         python-version: 3.8
 
     - name: Set current date as env variable
-      run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')"
+      run: echo "zipfile = $(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
 
     - name: Zip it all up and upload to S3
       env:
-        name_zipfile: $NOW + python.zip 
-        release_bucket_uri: s3://oliver-cloud-resume-backend/ + name_zipfile
+        release_bucket_uri: s3://oliver-cloud-resume-backend/
       run: |
-          zip -r -j $name_zipfile python/*
-          aws s3 cp $name_zipfile $release_bucket_uri 
+          zip -r -j $zipfile python/*
+          aws s3 cp $zipfile $release_bucket_uri 
     - name: Deployment of back-end
       run: sam deploy -t backendStack.yaml --no-fail-on-empty-changeset --stack-name backEndStack --region us-east-1 --capabilities CAPABILITY_IAM
