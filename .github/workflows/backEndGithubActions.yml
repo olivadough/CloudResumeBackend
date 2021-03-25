@@ -31,9 +31,7 @@ jobs:
         python-version: 3.8
     - name: Zip it all up and upload to S3
       env:
-        release_bucket: oliver-cloud-resume-backend
         release_bucket_uri: s3://oliver-cloud-resume-backend/
-        release_id: oliver-cloud-resume-backend
       run: |
           zip --quiet -r python.zip python
           aws s3 cp python.zip $release_bucket_uri
