@@ -8,7 +8,7 @@ Resources:
   Lambda:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://oliver-cloud-resume-backend/
+      CodeUri: s3://oliver-cloud-resume-backend/python.zip
       Events:
         ApiEvent:
           Type: Api
