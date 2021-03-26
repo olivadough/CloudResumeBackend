@@ -12,7 +12,8 @@ Resources:
   LFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: !Ref CodeU
+      CodeUri: 
+        Ref: CodeU
       Events:
         ApiEvent:
           Type: Api
