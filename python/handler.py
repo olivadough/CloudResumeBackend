@@ -12,7 +12,7 @@ def handler(event, context):
     table = dynamodb.Table('NumberOfVisitors')
     responseUpdate = table.update_item(
         Key={
-            'Name': 'NumberOfVisitors
+            'Name': 'NumberOfVisitors'
         },
         UpdateExpression="SET Count = Count + :val",
         ExpressionAttributeValues={
