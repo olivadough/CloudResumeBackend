@@ -12,7 +12,7 @@ Resources:
   LFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://oliver-cloud-resume-backend/python.zip
+      CodeUri: !CodeU
       Events:
         ApiEvent:
           Type: Api
