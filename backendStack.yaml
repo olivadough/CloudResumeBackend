@@ -1,7 +1,9 @@
 Transform: AWS::Serverless-2016-10-31
 
 Parameters:
-  CodeU:
+  CodeBucket:
+    Type: String
+  CodeKey:
     Type: String
 
 Resources:
@@ -13,7 +15,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: 
-        Ref: CodeU
+        Bucket: !Ref CodeBucket
+        Key: !Ref CodeKey
       Events:
         ApiEvent:
           Type: Api
