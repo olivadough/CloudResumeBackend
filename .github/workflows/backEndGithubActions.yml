@@ -30,6 +30,10 @@ jobs:
       with:
         python-version: 3.8
     
+    - name: Install Boto3
+      run: |
+        pip install boto3
+    
     - name: Set current date as env variable
       run: echo "current_date=$(date +'%Y-%m-%d-T%H-%M-%S')" >> $GITHUB_ENV
 
@@ -42,7 +46,3 @@ jobs:
     
     - name: Deployment of back-end
       run: sam deploy -t backendStack.yaml --no-fail-on-empty-changeset --stack-name backEndStack --region us-east-1 --capabilities CAPABILITY_IAM --parameter-overrides "CodeKey=$current_date.zip" "CodeBucket=oliver-cloud-resume-backend"
-    
-    - name: Install Boto3
-      run: |
-        pip install boto3
