@@ -7,16 +7,23 @@ def placeholder(event, context):
 def handler(event, context):
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('NumberOfVisitors')
-    response = table.update_item(
+    responseUpdate = table.update_item(
         Key={
-            'Name': Count,
-            'Type': Number 
+            'Name': 'Count',
+            'Type': 'Number' 
         },
         UpdateExpression="SET Count = Count + :val",
         ExpressionAttributeValues={
             ':val': 1
         },
         ReturnValues="Count"
+    )
+    
+    response = table.get_item(
+    Key={
+        'username': 'janedoe',
+        'last_name': 'Doe'
+    }
     )
 
     return {
