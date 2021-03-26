@@ -4,7 +4,7 @@ from boto3.dynamodb.conditions import Key, Attr
 def handler(event, context):
     dynamodb = boto3.resource('Table')
     table = dynamodb.Table('NumberOfVisitors')
-    return {'body': dynamodb, 'statusCode': 200}
+    return {'body': table, 'statusCode': 200}
 
 def placeholder(event, context):
     dynamodb = boto3.resource('dynamodb')
