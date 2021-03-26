@@ -1,5 +1,10 @@
 Transform: AWS::Serverless-2016-10-31
 
+Parameters:
+  CodeU:
+    Type: String
+    ParameterProperty: value  
+
 Resources:
   ApiGatewayApi:
     Type: AWS::Serverless::Api
@@ -8,7 +13,7 @@ Resources:
   LFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://oliver-cloud-resume-backend/python.zip
+      CodeUri: !Ref CodeU
       Events:
         ApiEvent:
           Type: Api
@@ -19,3 +24,4 @@ Resources:
               Ref: ApiGatewayApi
       Runtime: python3.8
       Handler: handler.handler
+
