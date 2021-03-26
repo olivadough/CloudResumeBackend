@@ -27,3 +27,10 @@ Resources:
               Ref: ApiGatewayApi
       Runtime: python3.8
       Handler: handler.handler
+  Table:
+    Type: AWSS::Serverless::SimpleTable
+    Properties:
+      PrimaryKey: counter
+      TableName: NumberOfVisitors
+      Tags:
+        Count: 0
