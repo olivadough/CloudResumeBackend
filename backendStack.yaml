@@ -30,7 +30,10 @@ Resources:
   Table:
     Type: AWS::Serverless::SimpleTable
     Properties:
-      PrimaryKey: counter
+      PrimaryKey:
+        Name: Count
+        Type: Number 
+        
       TableName: NumberOfVisitors
       Tags:
         Count: 0
