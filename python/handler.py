@@ -12,15 +12,15 @@ def handler(event, context):
     table = dynamodb.Table('NumberOfVisitors')
     responseUpdate = table.update_item(
         Key={
-            'Name': 'Count',
+            'Name': 'NumberOfVisitors
         },
         UpdateExpression="SET Count = Count + :val",
         ExpressionAttributeValues={
             ':val': 1
         },
-        ReturnValues="Count"
+        ReturnValues= 'UPDATED_NEW'
     )
     return {
       'statusCode': 200,
-      'body': 'hello'
+      'body': responseUpdate['Count']
     }
