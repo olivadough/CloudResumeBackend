@@ -14,11 +14,11 @@ def handler(event, context):
         Key={
             'Name': 'NumberOfVisitors'
         },
-        UpdateExpression="SET Count = Count + :val",
+        UpdateExpression='SET Count = Count + :val',
         ExpressionAttributeValues={
             ':val': 1
         },
-        ReturnValues= 'UPDATED_NEW'
+        ReturnValues= 'ALL_NEW'
     )
     return {
       'statusCode': 200,
