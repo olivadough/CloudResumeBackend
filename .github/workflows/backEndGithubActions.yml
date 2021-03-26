@@ -40,4 +40,4 @@ jobs:
           zip -r -j $current_date python/*
           aws s3 cp $current_date.zip s3://oliver-cloud-resume-backend/$current_date.zip
     - name: Deployment of back-end
-      run: sam deploy -t backendStack.yaml --no-fail-on-empty-changeset --stack-name backEndStack --region us-east-1 --capabilities CAPABILITY_IAM --parameter-overrides ParameterKey=CodeU,ParameterValue=s3://oliver-cloud-resume-backend/$current_date
+      run: sam deploy -t backendStack.yaml --no-fail-on-empty-changeset --stack-name backEndStack --region us-east-1 --capabilities CAPABILITY_IAM --parameter-overrides ParameterKey=CodeU,ParameterValue=s3://oliver-cloud-resume-backend/$current_date.zip
