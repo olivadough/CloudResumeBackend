@@ -10,7 +10,7 @@ def handler2(event, context):
 def handler(event, context):
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('NumberOfVisitors')
-    responseUpdate = table.update_item(
+    response = table.update_item(
         Key={
             'Name': 'Count'
         },
@@ -18,12 +18,9 @@ def handler(event, context):
         ExpressionAttributeValues={
             ':val': 1
         },
-        ReturnConsumedCapacity= 'NONE',
-        ReturnItemCollectionMetrics='NONE',
-
         ReturnValues= 'ALL_NEW'
     )
     return {
       'statusCode': 200,
-      'body': responseUpdate
+      'body': response
     }
