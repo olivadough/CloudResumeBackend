@@ -19,7 +19,6 @@ def handler(event, context):
             ':val': 1
         },
         ReturnValues= 'ALL_NEW'
-        
     )
     return {
       'statusCode': 200,
