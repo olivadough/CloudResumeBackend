@@ -14,7 +14,6 @@ Resources:
   LFunction:
     Type: AWS::Serverless::Function
     Properties:
-      PermissionBoundary: arn:aws:iam::422473136888:user/github-actions
       CodeUri: 
         Bucket: !Ref CodeBucket
         Key: !Ref CodeKey
@@ -29,7 +28,7 @@ Resources:
       Runtime: python3.8
       Handler: handler.handler
       Policies:
-        - AmazonDynamoDBFullAccess: {}
+      - AmazonDynamoDBFullAccess
   Table:
     Type: AWS::Serverless::SimpleTable
     Properties:
