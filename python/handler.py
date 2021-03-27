@@ -14,7 +14,10 @@ def handler(event, context):
         Key={
             'Mainkey': 'iou'
         },
-        UpdateExpression='ADD Visits :1',
+        UpdateExpression='ADD Visits = :val',
+        ExpressionAttributeValues={
+            ':val': 1
+        },
         ReturnValues= 'ALL_NEW'
     )
     return {
