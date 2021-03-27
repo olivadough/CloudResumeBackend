@@ -28,7 +28,7 @@ Resources:
       Runtime: python3.8
       Handler: handler.handler
       Policies:
-        -AmazonDynamoDBFullAccess
+        - AmazonDynamoDBFullAccess: {}
   Table:
     Type: AWS::Serverless::SimpleTable
     Properties:
