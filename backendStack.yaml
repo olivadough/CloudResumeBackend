@@ -32,8 +32,7 @@ Resources:
     Properties:
       PrimaryKey:
         Name: Count
-        Type: Number 
-        
+        Type: String
       TableName: NumberOfVisitors
       Tags:
         Count: 0
