@@ -20,7 +20,9 @@ def handler(event, context):
         },
         ReturnValues= 'ALL_NEW'
     )
+    print(str(response['Attributes']))
+
     return {
       'statusCode': 200,
-      'body': response
+      'body': response['Attributes']['']
     }
