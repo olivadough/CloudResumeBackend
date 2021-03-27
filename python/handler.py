@@ -14,9 +14,9 @@ def handler(event, context):
         Key={
             'Mainkey': 'iou'
         },
-        UpdateExpression='ADD Visits = :val',
+        UpdateExpression='ADD Visits :increment',
         ExpressionAttributeValues={
-            ':val': 1
+            ':increment': 1
         },
         ReturnValues= 'ALL_NEW'
     )
