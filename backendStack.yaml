@@ -33,8 +33,8 @@ Resources:
     Type: AWS::Serverless::SimpleTable
     Properties:
       PrimaryKey:
-        Name: Count
-        Type: Number 
+        Name: Mainkey
+        Type: String
       TableName: NumberOfVisitors
       Tags:
         Visits: 0
