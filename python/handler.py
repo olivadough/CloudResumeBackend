@@ -2,14 +2,14 @@ import boto3
 
 def handler2(event, context):
     dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table('NumberOfVisitors')
+    table = dynamodb.Table('Visitors')
     
 
     return {'body': table, 'statusCode': 200}
 
 def handler(event, context):
     dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table('NumberOfVisitors')
+    table = dynamodb.Table('Visitors')
     response = table.update_item(
         Key={
             'Mainkey': 'iou'

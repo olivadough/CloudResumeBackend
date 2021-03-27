@@ -35,6 +35,6 @@ Resources:
       PrimaryKey:
         Name: Mainkey
         Type: String
-      TableName: NumberOfVisitors
+      TableName: Visitors
       Tags:
         Visits: 0
