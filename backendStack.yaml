@@ -32,7 +32,7 @@ Resources:
     Properties:
       PrimaryKey:
         Name: Count
-        Type: String
+        Type: Number 
       TableName: NumberOfVisitors
       Tags:
         Count: 0
