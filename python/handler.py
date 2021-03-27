@@ -14,7 +14,7 @@ def handler(event, context):
         Key={
             'Name': 'Count'
         },
-        UpdateExpression='SET Count = Count + :val',
+        UpdateExpression='SET Visits = Visits + :val',
         ExpressionAttributeValues={
             ':val': 1
         },

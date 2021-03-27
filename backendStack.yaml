@@ -35,4 +35,4 @@ Resources:
         Type: Number 
       TableName: NumberOfVisitors
       Tags:
-        Count: 0
+        Visits: 0
