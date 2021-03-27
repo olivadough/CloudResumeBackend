@@ -29,7 +29,7 @@ Resources:
       Handler: handler.handler
       Policies:
       - AmazonDynamoDBFullAccess
-  Table:
+  DynamoDb:
     Type: AWS::Serverless::SimpleTable
     Properties:
       PrimaryKey:
