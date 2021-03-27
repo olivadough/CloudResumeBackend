@@ -20,10 +20,10 @@ def handler(event, context):
         },
         ReturnConsumedCapacity= 'NONE',
         ReturnItemCollectionMetrics='NONE',
-        
+
         ReturnValues= 'ALL_NEW'
     )
     return {
       'statusCode': 200,
-      'body': responseUpdate['Count']
+      'body': responseUpdate
     }
