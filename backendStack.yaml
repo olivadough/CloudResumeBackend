@@ -14,7 +14,7 @@ Resources:
   LFunction:
     Type: AWS::Serverless::Function
     Properties:
-      PermissionBoundary: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      PermissionBoundary: arn:aws:iam::422473136888:user/github-actions
       CodeUri: 
         Bucket: !Ref CodeBucket
         Key: !Ref CodeKey
