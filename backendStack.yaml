@@ -27,6 +27,8 @@ Resources:
               Ref: ApiGatewayApi
       Runtime: python3.8
       Handler: handler.handler
+      Policies:
+        -AmazonDynamoDBFullAccess
   Table:
     Type: AWS::Serverless::SimpleTable
     Properties:
