@@ -12,10 +12,10 @@ Resources:
     Properties:
       StageName: prod
       Cors:
-        AllowMethods: "'POST, GET'"
-        AllowHeaders: "'X-Forwarded-For'"
-        AllowOrigin: "'http://cloud-resume-challenge-oliver.com.s3-website-us-east-1.amazonaws.com/'"
-        MaxAge: "'600'"
+        AllowMethods: *
+        AllowHeaders: *
+        AllowOrigin: *
+        MaxAge: *
         AllowCredentials: True
   LFunction:
     Type: AWS::Serverless::Function
