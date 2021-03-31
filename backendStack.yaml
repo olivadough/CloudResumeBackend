@@ -11,12 +11,6 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       StageName: prod
-      Cors:
-        AllowMethods: *
-        AllowHeaders: *
-        AllowOrigin: *
-        MaxAge: *
-        AllowCredentials: True
   LFunction:
     Type: AWS::Serverless::Function
     Properties:
