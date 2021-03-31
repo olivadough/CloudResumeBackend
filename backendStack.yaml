@@ -11,7 +11,8 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       StageName: prod
-      Cors: http://cloud-resume-challenge-oliver.com.s3-website-us-east-1.amazonaws.com/
+      Cors: 
+      - http://cloud-resume-challenge-oliver.com.s3-website-us-east-1.amazonaws.com/
   LFunction:
     Type: AWS::Serverless::Function
     Properties:
